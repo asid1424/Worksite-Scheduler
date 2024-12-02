@@ -199,8 +199,7 @@ export default function Dashboard() {
                         </div>
                         <div className="flex items-center text-gray-600">
                           <MapPin className="w-4 h-4 mr-2" />
-                          <p className="text-sm">{shift.location || 'Main Office'}</p>
-                        </div>
+                          <p className="text-sm">Main Office</p>                        </div>
                       </div>
                       <button
                         onClick={() => takeShift(shift.id, shift.date)}
@@ -246,7 +245,7 @@ export default function Dashboard() {
                         </div>
                         <div className="flex items-center text-gray-600">
                           <MapPin className="w-4 h-4 mr-2" />
-                          <p className="text-sm">{shift.location || 'Main Office'}</p>
+                          <p className="text-sm">Main Office</p>                        
                         </div>
                       </div>
                       <button
