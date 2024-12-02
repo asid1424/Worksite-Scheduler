@@ -73,12 +73,18 @@ export default function Home() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+interface FeatureCardProps {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-filter backdrop-blur-lg transform hover:scale-105 transition duration-300">
       <div className="flex justify-center mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-purple-200">{description}</p>
+      <h3 className="text-lg font-semibold text-center mb-2">{title}</h3>
+      <p className="text-sm text-center text-gray-500">{description}</p>
     </div>
   )
 }
