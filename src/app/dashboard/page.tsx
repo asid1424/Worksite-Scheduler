@@ -45,43 +45,59 @@ export default function Dashboard() {
   }, [filterByDate, filterByJob, availableShifts]);
 
   const takeShift = async (shiftId: number, shiftDate: string) => {
+    if (!user) {
+      alert('User is not logged in.');
+      return;
+    }
+  
     const hasShiftOnSameDay = myShifts.some((shift) => shift.date === shiftDate);
-
+  
     if (hasShiftOnSameDay) {
       alert('You already have a shift on this day.');
       return;
     }
-
+  
     const { error } = await supabase
       .from('shifts')
       .update({ taken_by: user.id })
       .eq('id', shiftId)
       .is('taken_by', null);
-
+  
     if (!error) {
       setAvailableShifts((prev) => prev.filter((shift) => shift.id !== shiftId));
       setMyShifts((prev) => [
         ...prev,
         availableShifts.find((shift) => shift.id === shiftId) as Shift,
-      ])
+      ]);
+    } else {
+      alert('Failed to take the shift.');
     }
-  }
+  };
+  
 
   const cancelShift = async (shiftId: number) => {
+    if (!user) {
+      alert('User is not logged in.');
+      return;
+    }
+  
     const { error } = await supabase
       .from('shifts')
       .update({ taken_by: null })
       .eq('id', shiftId)
       .eq('taken_by', user.id);
-
+  
     if (!error) {
       setMyShifts((prev) => prev.filter((shift) => shift.id !== shiftId));
       setAvailableShifts((prev) => [
         ...prev,
         myShifts.find((shift) => shift.id === shiftId) as Shift,
-      ])
+      ]);
+    } else {
+      alert('Failed to cancel the shift.');
     }
-  }
+  };
+  
 
   const tabs = [
     { id: 'available', label: 'Available Shifts', icon: <Calendar className="w-5 h-5" /> },
