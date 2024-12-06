@@ -2,7 +2,7 @@
 
 import { Navbar } from '../components/Navbar'
 import { UserButton } from '@clerk/nextjs'
-import { LayoutDashboard, Mail, Phone, MapPin, Linkedin, Instagram, Github } from 'lucide-react'
+import { LayoutDashboard, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react'
 
 const teamMembers = [
   { 
