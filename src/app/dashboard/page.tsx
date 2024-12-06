@@ -5,6 +5,7 @@ import { supabase } from '../../lib/supabase';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Calendar, Clock, XCircle, CheckCircle, LayoutDashboard, Briefcase, MapPin, Filter } from 'lucide-react';
 import { Shift } from './types';
+import { Navbar } from '../components/Navbar'
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('available');
@@ -68,11 +69,11 @@ export default function Dashboard() {
       setMyShifts((prev) => [
         ...prev,
         availableShifts.find((shift) => shift.id === shiftId) as Shift,
-      ]);
+      ])
     } else {
       alert('Failed to take the shift.');
     }
-  };
+  }
   
 
   const cancelShift = async (shiftId: number) => {
@@ -96,7 +97,7 @@ export default function Dashboard() {
     } else {
       alert('Failed to cancel the shift.');
     }
-  };
+  }
   
 
   const tabs = [
@@ -110,10 +111,11 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <LayoutDashboard className="h-8 w-8 text-purple-600 mr-2" />
-            <h1 className="text-2xl font-bold text-gray-900">Worksite-Scheduler Dashboard</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Worksite-Scheduler</h1>
           </div>
           <UserButton afterSignOutUrl="/" />
         </div>
+        <Navbar />
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -199,7 +201,8 @@ export default function Dashboard() {
                         </div>
                         <div className="flex items-center text-gray-600">
                           <MapPin className="w-4 h-4 mr-2" />
-                          <p className="text-sm">Main Office</p>                        </div>
+                          <p className="text-sm">Main Office</p>                        
+                        </div>
                       </div>
                       <button
                         onClick={() => takeShift(shift.id, shift.date)}
@@ -266,4 +269,3 @@ export default function Dashboard() {
     </div>
   )
 }
-
