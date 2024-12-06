@@ -13,9 +13,8 @@ const teamMembers = [
     phone: '(646) 623-1231',
     location: 'Brooklyn, NY',
     bio: 'Experienced team lead with a passion for delivering high-quality projects on time.',
-    linkedin: 'https://www.linkedin.com/in/johndoe',
-    instagram: 'https://instagram.com/johndoe',
-    github: 'https://github.com/johndoe'
+    linkedin: 'https://www.linkedin.com/in/arman-aziz-3a18062b4/',
+    github: 'https://github.com/playboiarman'
   },
   { 
     name: 'Ahmed Sidahmed', 
@@ -25,9 +24,8 @@ const teamMembers = [
     phone: '(929) 245-3932',
     location: 'Brooklyn, NY',
     bio: 'Full-stack developer with expertise in React, Node.js, and cloud technologies.',
-    linkedin: 'https://www.linkedin.com/in/janesmith',
-    instagram: 'https://instagram.com/janesmith',
-    github: 'https://github.com/janesmith'
+    linkedin: 'https://www.linkedin.com/in/ahmed-sidahmed-7757b6299/',
+    github: 'https://github.com/asid1424'
   },
   { 
     name: 'Jayden Clermont', 
@@ -38,8 +36,7 @@ const teamMembers = [
     location: 'Brooklyn, NY',
     bio: 'Creative designer focused on crafting intuitive and beautiful user experiences.',
     linkedin: 'https://www.linkedin.com/in/mikejohnson',
-    instagram: 'https://instagram.com/mikejohnson',
-    github: 'https://github.com/mikejohnson'
+    github: 'https://github.com/JayDaDen'
   },
 ]
 
@@ -92,10 +89,6 @@ export default function TeamsPage() {
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600">
                     <Linkedin className="w-6 h-6" />
                     <span className="sr-only">LinkedIn</span>
-                  </a>
-                  <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600">
-                    <Instagram className="w-6 h-6" />
-                    <span className="sr-only">Instagram</span>
                   </a>
                   <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600">
                     <Github className="w-6 h-6" />
