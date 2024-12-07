@@ -35,7 +35,7 @@ const teamMembers = [
     phone: '(800) 493-7562',
     location: 'Brooklyn, NY',
     bio: 'Creative designer focused on crafting intuitive and beautiful user experiences.',
-    linkedin: 'https://www.linkedin.com/in/mikejohnson',
+    linkedin: 'https://www.linkedin.com/in/jayden-clermont/',
     github: 'https://github.com/JayDaDen'
   },
 ]
